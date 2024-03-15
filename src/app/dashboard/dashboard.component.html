@@ -1,0 +1,10 @@
+<h3>Top Alumnos</h3>
+<div class="grid grid-pad">
+    <a *ngFor="let alumno of alumnos" class="col-1-4"   routerLink="/detail/{{alumno.id}}">
+        <div class="module">
+            <h4>{{alumno.name}}</h4>
+        </div>
+    </a>
+</div>
+
+<app-alumnos-search></app-alumnos-search>
