@@ -1,0 +1,15 @@
+Package                            Current   Wanted  Latest  Location                                        Depended by
+@angular-devkit/build-angular      13.3.11  13.3.11  17.3.0  node_modules/@angular-devkit/build-angular      finaltrabajoaramayo
+@angular/animations                 13.4.0   13.4.0  17.3.0  node_modules/@angular/animations                finaltrabajoaramayo
+@angular/cdk                        13.3.9   13.3.9  17.3.0  node_modules/@angular/cdk                       finaltrabajoaramayo
+@angular/cli                       13.3.11  13.3.11  17.3.0  node_modules/@angular/cli                       finaltrabajoaramayo
+@angular/common                     13.4.0   13.4.0  17.3.0  node_modules/@angular/common                    finaltrabajoaramayo
+@angular/compiler                   13.4.0   13.4.0  17.3.0  node_modules/@angular/compiler                  finaltrabajoaramayo
+@angular/compiler-cli               13.4.0   13.4.0  17.3.0  node_modules/@angular/compiler-cli              finaltrabajoaramayo
+@angular/core                       13.4.0   13.4.0  17.3.0  node_modules/@angular/core                      finaltrabajoaramayo
+@angular/forms                      13.4.0   13.4.0  17.3.0  node_modules/@angular/forms                     finaltrabajoaramayo
+@angular/material                   13.3.9   13.3.9  17.3.0  node_modules/@angular/material                  finaltrabajoaramayo
+@angular/platform-browser           13.4.0   13.4.0  17.3.0  node_modules/@angular/platform-browser          finaltrabajoaramayo
+@angular/platform-browser-dynamic   13.4.0   13.4.0  17.3.0  node_modules/@angular/platform-browser-dynamic  finaltrabajoaramayo
+@angular/platform-server            13.4.0   13.4.0  17.3.0  node_modules/@angular/platform-server           finaltrabajoaramayo
+@angular/router                     13.4.0   13.4.0  17.3.0  node_modules/@angular/router                    finaltrabajoaramayo

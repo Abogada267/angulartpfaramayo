@@ -1,17 +1,17 @@
-import { inject } from '@angular/core';
-import { CanActivateFn, Router } from '@angular/router';
-import { map } from 'rxjs';
-import { AuthService } from '../services/';
+import { CanActivate, Router, UrlTree } from '@angular/router';
+import { Observable } from 'rxjs';
+import { AuthService } from '../../layout/auth/auth/auth.service';
 
-export const authGuard: CanActivateFn = (route, state) => {
-  const router = inject(Router);
-  const authService = inject(AuthService);
+export class AuthGuard implements CanActivate {
+  constructor(private authService: AuthService, private router: Router) {}
 
-  return authService
-    .verifyToken()
-    .pipe(
-      map((isAuthenticated) =>
-        isAuthenticated ? true : router.createUrlTree(['auth', 'login'])
-      )
-    );
-};
+  canActivate(): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    // Aquí puedes poner la lógica de autorización
+    if (this.authService.isLoggedIn()) {
+      return true; // Permite la navegación si el usuario está autenticado
+    } else {
+      // Si el usuario no está autenticado, redirige a la página de inicio de sesión
+      return this.router.parseUrl('/login');
+    }
+  }
+}

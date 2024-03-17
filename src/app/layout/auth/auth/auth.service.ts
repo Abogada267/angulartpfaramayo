@@ -25,6 +25,7 @@ const MOCK_USER = {
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
+  isLoggedIn: any;
   constructor(
     private router: Router,
     private alertsService: AlertsService,
