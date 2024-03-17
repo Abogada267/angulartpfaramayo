@@ -2,13 +2,11 @@ import { CommonModule, registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import es from '@angular/common/locales/es';
 import esAR from '@angular/common/locales/es-AR';
-import { ApplicationRef, LOCALE_ID, NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-
-import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AlumnosDetailComponent } from './alumnos-detail/alumnos-detail.component';
 import { AlumnosSearchComponent } from './alumnos-search/alumnos-search.component';
 import { AlumnosComponent } from './alumnos/alumnos.component';
@@ -31,7 +29,7 @@ registerLocaleData(esAR);
     AlumnosSearchComponent,
     MessagesComponent,
     LoginComponent,
-    AppComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -61,17 +59,7 @@ registerLocaleData(esAR);
       useValue: 'http://localhost:5000/',
     },
   ],
-  bootstrap: [],
+bootstrap: [ AppComponent ]
 })
-export class AppModule {
-  constructor(private appRef: ApplicationRef) { }
-  
+export class AppModule { }
 
-  ngDoBootstrap() {
-    this.appRef.bootstrap(AppComponent);
-  }
-}
-
-// Bootstrap de la aplicación
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));

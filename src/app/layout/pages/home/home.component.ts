@@ -1,12 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
-import { Router } from "@angular/router";
+import { RouterModule } from "@angular/router";
 import { Home } from '../home/home';
 
 @Component({
   selector: 'app-home',
-  templateUrl: '/home.component.html',
-  styleUrl: './home.component.scss',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'] ,
 })
 export class HomeComponent implements OnInit {
   homeNameInput: string = '';
@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   productsService: any;
 
   constructor(
-    private router: Router,
+    private router: RouterModule,
     public dialog: MatDialog
   ) {}
 

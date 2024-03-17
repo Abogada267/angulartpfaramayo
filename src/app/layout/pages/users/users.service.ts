@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, delay, mergeMap } from 'rxjs/operators';
-import { environment } from '../../../../environment/environment';
+import { environment } from '../../../../environment/environment.prod';
 import { Pagination } from '../../../core/models/pagination';
 import { AlertsService } from '../../../core/services/alerts.service';
 import { User } from '../users/models';

@@ -6,7 +6,7 @@ import { Observable, catchError, map, of, tap } from 'rxjs';
 import { AuthActions } from '../../../../../src/app/core/store/auth/actions';
 import { AlertsService } from '../../../../app/core/services/alerts.service';
 import { User } from '../../../../app/layout/pages/users/models';
-import { environment } from '../../../../environment/environment';
+import { environment } from '../../../../environment/environment.prod';
 import { LoadingService } from '../../../core/services/loading.service';
 
 interface LoginData {
