@@ -7,9 +7,9 @@ import { AuthService } from '../../auth.service';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
+
 export class LoginComponent {
   loginForm: FormGroup;
-
   revealPassword = false;
 
   constructor(private fb: FormBuilder, private authService: AuthService) {

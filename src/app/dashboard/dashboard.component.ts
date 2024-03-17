@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { alumno } from '../alumno';
+import { Alumno } from '../alumno';
 import { AlumnosService } from '../core/services/alumnos.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: [ './dashboard.component.css' ]
+  styleUrl:  './dashboard.component.css', 
 })
 export class DashboardComponent implements OnInit {
-  alumnos: alumno[] = [];
+  Alumnos: Alumno[] | undefined;
+  
 
   constructor(private alumnosService: AlumnosService) { }
 
@@ -18,6 +19,6 @@ export class DashboardComponent implements OnInit {
 
   getAlumnos(): void {
     this.alumnosService.getAlumnos()
-      .subscribe((alumnos: alumno[]) => this.alumnos = alumnos);
+      .subscribe((alumnos: Alumno[]) => this.Alumnos = alumnos);
   }
 }

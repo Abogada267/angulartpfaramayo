@@ -3,10 +3,9 @@ import { MatDialog } from "@angular/material/dialog";
 import { Router } from "@angular/router";
 import { Home } from '../home/home';
 
-
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
+  templateUrl: '/home.component.html',
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {

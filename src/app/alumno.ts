@@ -1,6 +1,7 @@
-export interface alumno
+export interface Alumno
 {
+   
   id: number;
-    name: string;
-    edad: number;
+  name: string;
+  edad: number;
 }

@@ -3,7 +3,7 @@ import { Observable, Subject } from 'rxjs';
 import {
   debounceTime, distinctUntilChanged, switchMap
 } from 'rxjs/operators';
-import { alumno } from '../alumno';
+import { Alumno } from '../alumno';
 import { AlumnosService } from '../core/services/alumnos.service';
 
 @Component({
@@ -12,7 +12,7 @@ import { AlumnosService } from '../core/services/alumnos.service';
   styleUrls: [ './alumnos-search.component.css' ]
 })
 export class AlumnosSearchComponent implements OnInit {
-  alumnos$!: Observable<alumno[]>;
+  alumnos$!: Observable<Alumno[]>;
   private searchTerms = new Subject<string>();
 
   constructor(private AlumnosService: AlumnosService) {}

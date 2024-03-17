@@ -8,8 +8,8 @@ import { UsersService } from './users.service';
 
 @Component({
   selector: 'app-users',
-  templateUrl: '/users.component.html',
-  styleUrl: './users.component.scss',
+  templateUrl: './users.component.html',
+  styleUrl: './users.component.css',
 })
 export class UsersComponent implements OnInit {
   displayedColumns: string[] = ['id', 'fullName', 'email', 'role', 'actions'];

@@ -1,7 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { alumno } from '../alumno'; 
+import { Alumno } from '../alumno';
 import { AlumnosService } from '../core/services/alumnos.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { AlumnosService } from '../core/services/alumnos.service';
   styleUrls: ['./alumnos-detail.component.scss'],
 })
 export class AlumnosDetailComponent implements OnInit {
-  alumno: alumno | undefined;
+  alumno: Alumno | undefined;
 
   constructor(
     private route: ActivatedRoute,

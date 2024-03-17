@@ -1,13 +1,18 @@
 <h1>{{title}}</h1>
+
+<h2> {{alumno}} </h2>
+ 
 <nav>
   <a routerLink="/dashboard">Ir al Dashboard</a>
   <a routerLink="/alumnos">Alumnos</a>
   <div class="bg-blue-500 text-white p-4 rounded-lg shadow-md">
-    
-</div>
+
+  </div>
 </nav>
-<router-outlet>
+
+<router-outlet></router-outlet> 
 <app-messages></app-messages>
-<app-dashboard></app-dashboard> 
+<app-dashboard></app-dashboard>
 <app-alumnos></app-alumnos>
-</router-outlet>
+<app-alumnos-detail></app-alumnos-detail>
+<app-alumnos-search></app-alumnos-search>

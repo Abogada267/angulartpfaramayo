@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { alumno } from '../alumno';
+import { Alumno } from '../alumno';
 import { AlumnosService } from '../core/services/alumnos.service';
-
 
 @Component({
   selector: 'app-alumnos',
@@ -9,54 +8,57 @@ import { AlumnosService } from '../core/services/alumnos.service';
   styleUrls: ['./alumnos.component.css'], 
 })
 export class AlumnosComponent implements OnInit {
-  selectalumnos: alumno | undefined;
-  alumnos: alumno[] | undefined;
 
+  alumnos: Alumno[] = [];
+  alumno: Alumno;
+  selectedAlumno: Alumno = { id: 1, name: 'Angelina', edad: 26 };
+  
+  constructor(private alumnosService: AlumnosService) {
+    this.alumno = this.selectedAlumno;
+  }
 
-  constructor(private AlumnosService: AlumnosService) {} 
-  
-  
   ngOnInit(): void {
-    this.getAlumnos();
+    this.getAlumnos(); 
   }
 
-  
   getAlumnos(): void {
-    this.AlumnosService.getAlumnos()
-        .subscribe((alumnos: alumno[] | undefined) => this.alumnos = alumnos);
+    this.alumnosService.getAlumnos()
+      .subscribe(
+        (alumnos: Alumno[]) => {
+          this.alumnos = alumnos;
+        },
+        (error: any) => {
+          console.error('Error fetching alumnos:', error);
+        }
+      );
   }
-  
+
   add(name: string): void {
     name = name.trim();
     if (!name) { return; }
-    this.AlumnosService.addAlumno({ name } as alumno)
-      .subscribe((alumno: alumno) => {
-        this.alumnos!.forEach(item => {
-          
-        });
-        
-       
-        this.alumnos!.push(alumno);
-      });
+    this.alumnosService.addAlumno({ name } as Alumno)
+      .subscribe(
+        (alumno: Alumno) => {
+          this.alumnos.push(alumno);
+        },
+        (error: any) => {
+          console.error('Error adding alumno:', error);
+        }
+      );
   }
 
-  deleteAlumno(valorAEliminar: alumno): void {
-    if (this.alumnos) {
-      
-      this.alumnos.forEach(alumno => {
-        
-      });
-    }
-    this.AlumnosService.deleteAlumno(valorAEliminar).subscribe(
-      () => {
-        console.log('Alumno eliminado correctamente');
-      },
-      (      error: any) => {
-        console.error('Error al eliminar alumno:', error);
-      }
-    );
+  deleteAlumno(valorAEliminar: Alumno): void {
+    this.alumnosService.deleteAlumno(valorAEliminar)
+      .subscribe(
+        () => {
+          console.log('Alumno eliminado correctamente');
+          this.alumnos = this.alumnos.filter((alumno: Alumno) => alumno !== valorAEliminar);
+        },
+        (error: any) => {
+          console.error('Error al eliminar alumno:', error);
+        }
+      );
   }
-  
 }
- 
- 
+
+

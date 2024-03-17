@@ -1,6 +1,6 @@
-import { alumno } from '../app/alumno';
+import { Alumno } from '../app/alumno';
 
-export const ALUMNOS: alumno [] = [
+export const ALUMNOS: Alumno [] = [
     {
         id: 11,
         name: "Angelina",

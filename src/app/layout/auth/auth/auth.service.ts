@@ -3,10 +3,10 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable, catchError, map, of, tap } from 'rxjs';
+import { AuthActions } from '../../../../../src/app/core/store/auth/actions';
+import { AlertsService } from '../../../../app/core/services/alerts.service';
 import { User } from '../../../../app/layout/pages/users/models';
 import { environment } from '../../../../environment/environment';
-import { AuthActions } from '../../../core/services/';
-import { AlertsService } from '../../../core/services/alerts.service';
 import { LoadingService } from '../../../core/services/loading.service';
 
 interface LoginData {
