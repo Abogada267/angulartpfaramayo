@@ -1,25 +1,25 @@
-import { Injectable } from '@angular/core';
-import { delay, finalize, of } from 'rxjs';
-import { Product } from './models';
-import { LoadingService } from '../../../../core/services/loading.service';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../../../environments/environment';
+import { Injectable } from '@angular/core';
+import { finalize } from 'rxjs';
+import { environment } from '../../../../../environment/environment';
+import { LoadingService } from '../../../../core/services/loading.service';
+import { Product } from './models';
 
 let products: Product[] = [
   {
     id: 1,
     name: 'PC Gamer',
-    createdAt: new Date(),
+    
   },
   {
     id: 2,
     name: 'Teclado Mecanico',
-    createdAt: new Date(),
+   
   },
   {
     id: 3,
     name: 'Auricular 7.1',
-    createdAt: new Date(),
+   
   },
 ];
 

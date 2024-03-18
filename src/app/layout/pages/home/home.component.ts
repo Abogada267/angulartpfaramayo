@@ -1,12 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
-import { RouterModule } from "@angular/router";
+import { Router } from "@angular/router";
 import { Home } from '../home/home';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'] ,
+  styleUrls: ['./home.component.css'] ,
 })
 export class HomeComponent implements OnInit {
   homeNameInput: string = '';
@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   productsService: any;
 
   constructor(
-    private router: RouterModule,
+    private router: Router, 
     public dialog: MatDialog
   ) {}
 
@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
 
   navegarAotraPagina(): void {
     console.log('../listadealumnos');
-    this.router.navigate(['../listadealumnos']);
+    this.router.navigate(['../listadealumnos']); 
   }
 
   onCreate(): void {
@@ -73,18 +73,13 @@ export class HomeComponent implements OnInit {
   }
 
   onDelete(id: number): void {
-  if (confirm('Esta seguro?')) {
-    
-  
-this.productsService.deleteProductById(id).subscribe({
-      
-  
-next: (updatedHome: Home[]) => {
-        
-  
-this.home = updatedHome;
-      },
-    });
+    if (confirm('¿Está seguro?')) {
+      this.productsService.deleteProductById(id).subscribe({
+        next: (updatedHome: Home[]) => {
+          this.home = updatedHome;
+        },
+      });
+    }
   }
 }
-  }
+

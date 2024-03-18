@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { first } from 'rxjs/operators';
 import { Alumno } from '../alumno';
 import { AlumnosService } from '../core/services/alumnos.service';
 
@@ -8,17 +9,29 @@ import { AlumnosService } from '../core/services/alumnos.service';
   styleUrls: ['./dashboard.component.css'] , 
 })
 export class DashboardComponent implements OnInit {
-  Alumnos: Alumno[] | undefined;
-  
+  Alumnos: Alumno[] =[];
 
   constructor(private alumnosService: AlumnosService) { }
 
   ngOnInit() {
-    this.getAlumnos();
+    this.getAlumnosFirst();
   }
 
-  getAlumnos(): void {
+  getAlumnosFirst(): void {
     this.alumnosService.getAlumnos()
-      .subscribe((alumnos: Alumno[]) => this.Alumnos = alumnos);
+      .pipe(
+        first()
+      )
+      .subscribe(
+        (alumnos: Alumno[]) => {
+          this.Alumnos = alumnos;
+        },
+        (error: any) => {
+          console.error('Error fetching alumnos:', error);
+        }
+      );
   }
 }
+
+
+

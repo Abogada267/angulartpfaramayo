@@ -1,11 +1,10 @@
-import { Inject, Injectable } from '@angular/core';
-import { MY_USER_TOKEN } from '../../../../core/injection-tokens';
-import { User } from './models';
-import { Observable, catchError, delay, mergeMap, of, tap } from 'rxjs';
-import { AlertsService } from '../../../../core/services/alerts.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from '../../../../../environments/environment';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable, catchError, delay, mergeMap, of } from 'rxjs';
+import { environment } from '../../../../../environment/environment';
 import { Pagination } from '../../../../core/models/pagination';
+import { AlertsService } from '../../../../core/services/alerts.service';
+import { User } from './models';
 
 const ROLES_DB: string[] = ['ADMIN', 'USER'];
 

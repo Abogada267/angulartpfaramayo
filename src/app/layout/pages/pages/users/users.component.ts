@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { PageEvent } from '@angular/material/paginator';
+import { ActivatedRoute } from '@angular/router';
+import { forkJoin } from 'rxjs';
+import { LoadingService } from '../../../../core/services/loading.service';
 import { User } from './models';
 import { UsersService } from './users.service';
-import { LoadingService } from '../../../../core/services/loading.service';
-import { forkJoin } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
-import { HttpErrorResponse } from '@angular/common/http';
-import { PageEvent } from '@angular/material/paginator';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrl: './users.component.scss',
+  styleUrl: './users.component.css',
 })
 export class UsersComponent implements OnInit {
   displayedColumns: string[] = ['id', 'fullName', 'email', 'role', 'actions'];

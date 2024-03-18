@@ -4,7 +4,7 @@ import { Observable, Subscription } from 'rxjs';
 @Component({
   selector: 'app-rxjs-example',
   templateUrl: './rxjs-example.component.html',
-  styleUrl: './rxjs-example.component.scss',
+  styleUrl: './rxjs-example.component.css',
 })
 export class RxjsExampleComponent {
   /**

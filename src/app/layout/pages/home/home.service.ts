@@ -1,36 +1,23 @@
 import { Injectable } from '@angular/core';
-import { delay, finalize, of } from 'rxjs';
-import { Product } from '../../pages/';
-import { Home } from '../home/home.component';
-
-let home: Home [] = [
-  {
-    id: 1,
-    name: 'Malvina',
-    createdAt: new Date(),
-    actions: 'nuevo',
-  },
-  {
-    id: 2,
-    name: 'Graciela',
-    createdAt: new Date(),
-    actions: 'nuevoo',
-  },
-  {
-    id: 3,
-    name: 'Auricular ',
-    createdAt: new Date(),
-    actions: 'nuevooo',
-  },
-];
+import { of } from 'rxjs';
+import { delay, finalize } from 'rxjs/operators';
+import { LoadingService } from '../../../core/services/loading.service';
+import { Home } from '../home/home';
+import { Product } from '../pages/products/models';
 
 @Injectable()
 export class ProductsService {
-  [x: string]: any;
+  products: Product[] = [];
+
   constructor(private loadingService: LoadingService) {}
 
   getHome() {
     this.loadingService.setIsLoading(true);
+    const home: Home[] = [
+      { id: 1, name: 'Malvina' },
+      { id: 2, name: 'Graciela' },
+      { id: 3, name: 'Auricular' }
+    ];
     return of(home).pipe(
       delay(1500),
       finalize(() => this.loadingService.setIsLoading(false))
@@ -38,17 +25,22 @@ export class ProductsService {
   }
 
   createProduct(data: Home) {
-    Product = [...Product, { ...data, id: Product.length + 1 }];
-    return this['getProducts']();
+    this.products = [...this.products, { ...data, id: this.products.length + 1 }];
+    return this.getProducts();
   }
 
   deleteProductById(id: number) {
-    Product = Product.filter((el) => el.id != id);
-    return this['getProducts']();
+    this.products = this.products.filter((el) => el.id !== id);
+    return this.getProducts();
   }
 
   updateProductById(id: number, data: Product) {
-    Product = Product.map((el) => (el.id === id ? { ...el, ...data } : el));
-    return this['getProducts']();
+    this.products = this.products.map((el) => (el.id === id ? { ...el, ...data } : el));
+    return this.getProducts();
+  }
+
+  // Suponiendo que tienes una función para obtener los productos
+  private getProducts(): Product[] {
+    return this.products;
   }
 }

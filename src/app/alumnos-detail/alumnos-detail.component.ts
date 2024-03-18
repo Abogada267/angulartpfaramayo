@@ -7,7 +7,7 @@ import { AlumnosService } from '../core/services/alumnos.service';
 @Component({
   selector: 'app-alumnos-detail',
   templateUrl: './alumnos-detail.component.html',
-  styleUrls: ['./alumnos-detail.component.scss'],
+  styleUrls: ['./alumnos-detail.component.css'],
 })
 export class AlumnosDetailComponent implements OnInit {
   alumno: Alumno | undefined;

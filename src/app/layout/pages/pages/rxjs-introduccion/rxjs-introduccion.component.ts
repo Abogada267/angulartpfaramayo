@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { Observable, Subject, catchError, filter, of, map } from 'rxjs';
-import { LoadingService } from '../../../../core/services/loading.service';
+import { Observable, Subject, catchError, map, of } from 'rxjs';
 import { AlertsService } from '../../../../core/services/alerts.service';
+import { LoadingService } from '../../../../core/services/loading.service';
 
 @Component({
   selector: 'app-rxjs-introduccion',
   templateUrl: './rxjs-introduccion.component.html',
-  styles: ``,
+  styles: './rxjs-introduccion.component.css',
 })
 export class RxjsIntroduccionComponent {
   numbersObservable$ = new Observable((subscriber) => {

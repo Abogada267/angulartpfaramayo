@@ -10,7 +10,7 @@ import {
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
-  styleUrl: './categories.component.scss',
+  styleUrl: './categories.component.css',
 })
 export class CategoriesComponent {
   /**

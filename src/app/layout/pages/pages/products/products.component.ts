@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { ProductsService } from './products.service';
-import { Product } from './models';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductDialogComponent } from './components/product-dialog/product-dialog.component';
+import { Product } from './models';
+import { ProductsService } from './products.service';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrl: './products.component.scss',
+  styleUrl: './products.component.css',
 })
 export class ProductsComponent {
   displayedColumns = ['id', 'productName', 'createdAt', 'actions'];

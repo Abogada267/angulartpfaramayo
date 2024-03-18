@@ -6,7 +6,7 @@ import { join } from 'path';
 
 const indexHtml = join(__dirname, 'src/index.html');
 
-// Crear una instancia del motor común de Angular Universal
+
 const commonEngine = new CommonEngine();
 
 // Crear la aplicación Express

@@ -1,17 +1,16 @@
 import { Component, OnDestroy } from '@angular/core';
-import { SalesService } from './sales.service';
+import { MatDialog } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
+import { Observable, Subject, Subscription, takeUntil } from 'rxjs';
+import { SaleDialogComponent } from './components/sale-dialog/sale-dialog.component';
+import { Sale } from './models';
 import { SalesActions } from './store/sales.actions';
 import { selectSales, selectSalesIsLoading } from './store/sales.selectors';
-import { Observable, Subject, Subscription, takeUntil } from 'rxjs';
-import { Sale } from './models';
-import { MatDialog } from '@angular/material/dialog';
-import { SaleDialogComponent } from './components/sale-dialog/sale-dialog.component';
 
 @Component({
   selector: 'app-sales',
   templateUrl: './sales.component.html',
-  styleUrl: './sales.component.scss',
+  styleUrl: './sales.component.css',
 })
 export class SalesComponent implements OnDestroy {
   // sales$: Observable<Sale[]>;

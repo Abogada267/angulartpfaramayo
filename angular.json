@@ -17,7 +17,7 @@
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
+            "tsConfig": "tsconfig.json",
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -35,8 +35,8 @@
             "buildOptimizer": true,
             "fileReplacements": [
               {
-                "replace": "src/environments/environment.ts",
-                "with": "src/environments/environment.prod.ts"
+                "replace": "src/environment/environment.ts",
+                "with": "src/environment/environment.prod.ts"
               }
             ]
           },
@@ -45,7 +45,7 @@
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "with": "src/environment/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -81,7 +81,8 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "finalaramayo:build"
+            "browserTarget": "finaltrabajoaramayo:build:production,staging"
+
           }
         },
         "test": {
@@ -89,7 +90,7 @@
           "options": {
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
+            "tsConfig": "src/tsconfig.json",
             "karmaConfig": "src/karma.conf.js",
             "assets": [
               "src/favicon.ico",
@@ -105,6 +106,6 @@
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": "4f110c61-50af-48f4-bae7-a125c9953f81"
   }
 }

@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from '../../../../../environments/environment';
-import { CreateSaleData, Sale } from './models';
 import { catchError, concatMap, throwError } from 'rxjs';
+import { environment } from '../../../../../environment/environment';
 import { User } from '../users/models';
+import { CreateSaleData, Sale } from './models';
 
 @Injectable({ providedIn: 'root' })
 export class SalesService {

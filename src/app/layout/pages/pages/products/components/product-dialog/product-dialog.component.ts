@@ -6,7 +6,7 @@ import { Product } from '../../models';
 @Component({
   selector: 'app-product-dialog',
   templateUrl: './product-dialog.component.html',
-  styleUrl: './product-dialog.component.scss',
+  styleUrl: './product-dialog.component.css',
 })
 export class ProductDialogComponent {
   productForm: FormGroup;

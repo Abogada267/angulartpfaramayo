@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
-import { PipesComponent } from './pipes.component';
+import { NgModule } from '@angular/core';
+import { FullNamePipe } from '../../../../../app/shared/full-name.pipe';
 import { SharedModule } from '../../../../shared/shared.module';
-import { FullNamePipe } from '../../../../shared/full-name.pipe';
+import { PipesComponent } from '../pipes/pipes.component';
 
 @NgModule({
   declarations: [PipesComponent],

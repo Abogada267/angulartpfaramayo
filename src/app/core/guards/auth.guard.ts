@@ -6,11 +6,11 @@ export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    // Aquí puedes poner la lógica de autorización
+    
     if (this.authService.isLoggedIn()) {
-      return true; // Permite la navegación si el usuario está autenticado
+      return true; 
     } else {
-      // Si el usuario no está autenticado, redirige a la página de inicio de sesión
+     
       return this.router.parseUrl('/login');
     }
   }

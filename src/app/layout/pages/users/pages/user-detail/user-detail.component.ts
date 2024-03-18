@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { LoadingService } from '../../../../core/services/loading.service';
+import { LoadingService } from '../../../../../core/services/loading.service';
 import { UsersService } from '../../users.service';
 
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
-  styleUrl: './user-detail.component.scss',
+  styleUrl: './user-detail.component.css',
 })
 export class UserDetailComponent {
   constructor(

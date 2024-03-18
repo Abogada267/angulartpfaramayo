@@ -1,20 +1,20 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
-import { SalesActions } from '../../store/sales.actions';
 import { Observable } from 'rxjs';
+import { Product } from '../../../products/models';
 import { User } from '../../../users/models';
+import { SalesActions } from '../../store/sales.actions';
 import {
   selectSalesBuyers,
   selectSalesProducts,
 } from '../../store/sales.selectors';
-import { Product } from '../../../products/models';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-sale-dialog',
   templateUrl: './sale-dialog.component.html',
-  styleUrl: './sale-dialog.component.scss',
+  styleUrl: './sale-dialog.component.css',
 })
 export class SaleDialogComponent {
   buyers$: Observable<User[]>;

@@ -1,11 +1,11 @@
+import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FullNamePipe, UserPipe } from '../../../../shared/full-name.pipe';
-import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-pipes',
   templateUrl: './pipes.component.html',
-  styleUrl: './pipes.component.scss',
+  styleUrl: './pipes.component.css',
 })
 export class PipesComponent {
   today = new Date();

@@ -25,6 +25,9 @@ const MOCK_USER = {
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
+  authUser(authUser: any) {
+    throw new Error('Method not implemented.');
+  }
   isLoggedIn: any;
   constructor(
     private router: Router,
